@@ -1,0 +1,55 @@
+Github:
+
+repository - local branch
+index - local changes
+work tree - directory project
+
+Git config --global user.name "name"-zaregit pozovatelya 1 raz
+Git config --global user.mail "email"-zaregit' mail 1raz
+Git config --global core.autocrlf true 1 raz
+Git config --global core.safecrlf true 1 raz
+
+STATE
+
+git status - info about branch and view changes files
+git diff - difference between current state and last indexing (work tree and storage area)
+git diff --cached - difference between current state and last commit
+git diff <id> - difference between current state and id commit
+git log - history of commits in current branch (here we can review id of commits)
+
+git add <filename> - add file or a directory to stage area (index) (git add * - add all in current directory)
+git rm <filename> - remove file from project
+
+git commit -m "description of changes"
+
+BACKUP
+
+git checkout <id> - backup to commit id (before checkout do commit!)
+git checkout <id> file - backup to commit id (filename in current directory)
+
+git reset --hard HEAD - get back to state last commit (do not save current changes)
+git reset --soft <id> - return branch to commit id work tree and index do not changing (все последующие комиты удаляться)
+git reset <id> - backup index and repository dont touch worktree
+git reset --hard <id> - delete from index and repository and work tree and turn to id commit
+git revert <id> - make new commit with saving old commit
+
+BRANCHES
+
+git branch - show all branches of project (current branch marked with *)
+git branch <new name> - create new branch with current stage
+git checkout <name> - switch on branch with this name (do commit before use it)
+git checkout -b <newname> <id> - create new branch from id commit state
+git branch -d <name> - delete name branch
+
+REMOTE REPOSITORY (server)
+
+git remote add origin http://....git - include to remote repository on this path
+git pull origin <branch_name> - pull all from repository on branch_name
+git push origin <branch_name> - add all to this branch
+
+.gitignore     - files whitch ignored for commiting and pushed on server 
+	*.log
+ 	build/
+	.idea/
+	....
+git init - comand to start work with github
