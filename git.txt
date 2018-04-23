@@ -22,6 +22,8 @@ git rm <filename> - remove file from project
 
 git commit -m "description of changes"
 
+
+
 BACKUP
 
 git checkout <id> - backup to commit id (before checkout do commit!)
